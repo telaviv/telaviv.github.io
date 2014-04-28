@@ -202,7 +202,7 @@ Crafty.c('DragEvent', {
                 return;
             }
             this._pressed = true;
-            this.trigger('DragStart', e);
+            this.trigger('DragStart', this._toPointEvent(e));
         });
         this.bind('MouseUp', function(e) {
             if (this._pressed === false) {
@@ -210,13 +210,17 @@ Crafty.c('DragEvent', {
                 return;
             }
             this._pressed = false;
-            this.trigger('DragEnd', e);
+            this.trigger('DragEnd', this._toPointEvent(e));
         });
         this.bind('MouseMove', function(e) {
             if (this._pressed === false) return;
 
-            this.trigger('Dragging', e);
+            this.trigger('Dragging', this._toPointEvent(e));
         });
+    },
+
+    _toPointEvent: function(e) {
+        return {x: e.pageX, y: e.pageY}
     }
 });
 
