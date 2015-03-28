@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>EVO Stage Striker</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container-fluid">
+      <h1 class="title text-center">Player 1</h1>
+      <ul class="nav nav-pills nav-stacked">
+        <li class="text-center"><a href="javascript:;">Final Destination</a></li>
+        <li class="text-center"><a href="javascript:;">Battlefield</a></li>
+        <li class="text-center"><a href="javascript:;">Smashville</a></li>
+        <li class="text-center"><a href="javascript:;">Town and City</a></li>
+        <li class="text-center"><a href="javascript:;">Lylat Cruise</a></li>
+        <li class="text-center"><a href="javascript:;">Delfino Plaza</a></li>
+        <li class="text-center"><a href="javascript:;">Castle Siege</a></li>
+        <li class="text-center"><a href="javascript:;">Duck Hunt</a></li>
+        <li class="text-center"><a href="javascript:;">Halberd</a></li>
+      </ul>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script>
+$(function() {
+    var order = [
+        'Player 2',
+        'Player 2',
+        'Player 1',
+        'Player 1',
+        'Player 2',
+        'Player 2',
+        'Player 1',
+        'Final Stage Pick'
+    ];
+    $('li').click(function(event) {
+        $('.title').text(order[9 - $('li').length]);
+        if ($('li').length === 1) return;
+        event.target.parentElement.remove();
+    });
+});
+    </script>
+  </body>
+</html>
