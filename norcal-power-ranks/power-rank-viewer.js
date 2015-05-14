@@ -226,20 +226,25 @@ var highlightPlayer = function(player, players) {
     $('line[source="' + player + '"], line[target="' + player + '"]').fadeIn(FADE_TIME / 2);
 
     var playerNode = findPlayerNode(player, players);
-    var html = '<div class="centered">'
-    html += '<h2 class="current-player">' + playerNode.displayName + '</h2>'
-    html += playerHTML('Wins', 'wins', playerNode.wins, players);
-    html += playerHTML('Losses', 'losses', playerNode.losses, players);
-    html += '</div>'
+    var dom = $('<div class="centered">');
+    dom.append('<h2 class="current-player">' + playerNode.displayName + '</h2>');
+    dom.append(playerDom('Wins', 'wins', playerNode.wins, players))
+    dom.append(playerDom('Losses', 'losses', playerNode.losses, players));
 
-    $('#player-sidebar').html(html).hide().fadeIn(FADE_TIME);
+    $('#player-sidebar').empty().append(dom).hide().fadeIn(FADE_TIME);
 }
 
-var playerHTML = function(title, cls, playerNames, players) {
+var playerDom = function(title, cls, playerNames, players) {
     var html = '<div class="' + cls + ' player-column"><h2>' + title + '</h2>'
     html += playerNames.map(function(name) {
-        return '<span>' + name + '</span></br>';
+        return '<a class="' + normalizeName(name) + '" href="javascript:;">' + name + '</a></br>';
     }).join('');
-    html += '</div>'
-    return html;
+    html += '</div>';
+    var dom = $(html);
+    playerNames.forEach(function(displayName) {
+        dom.find('.' + normalizeName(displayName)).click(function() {
+            highlightPlayer(normalizeName(displayName), players);
+        });
+    });
+    return dom;
 };
