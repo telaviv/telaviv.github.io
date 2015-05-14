@@ -1,0 +1,189 @@
+body {
+    background-color: #83AF9B;
+    font-family: Verdana;
+    font-weight: 200;
+}
+
+svg {
+    position: absolute;
+}
+
+h1 {
+    color: #B8F2F8;
+    font-weight: 200;
+}
+
+h2 {
+    font-size: large;
+}
+
+p {
+    font-size: large;
+}
+
+#player-sidebar {
+    height: 100%;
+    width: 380px;
+    float: left;
+}
+
+.centered {
+    text-align: center;
+}
+
+.node.ranked {
+    fill: #B8F2F8;
+}
+
+.node.previously-ranked {
+    fill: #EFFAB4;
+}
+
+.node.unranked {
+    fill: black;
+}
+
+span.ranked {
+    color: #B8F2F8;
+}
+
+span.previously-ranked {
+    color: #EFFAB4;
+}
+
+span.unranked {
+    color: black;
+}
+
+@keyframes dashes {
+    from {stroke-dashoffset: 0; }
+    to {stroke-dashoffset: 100%; }
+}
+
+@-webkit-keyframes dashes {
+    from {stroke-dashoffset: 0; }
+    to {stroke-dashoffset: 100%; }
+}
+
+.link {
+    stroke: #C8C8A9;
+    stroke-width: 2px;
+    stroke-dasharray: 15, 10, 5;
+    -webkit-animation: dashes 100s infinite linear;
+    animation: dashes 100s infinite linear;
+}
+
+.d3-tip {
+    line-height: 1;
+    font-weight: bold;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border-radius: 2px;
+    color: #F9CDAD;
+}
+
+@keyframes fade {
+    from {opacity: 1;}
+    to {opacity: 0.3; }
+}
+
+@-webkit-keyframes fade {
+    from {opacity: 1;}
+    to {opacity: 0.3;}
+}
+
+.fade-out {
+    -webkit-animation: fade 3s 1, dashes 100s infinite linear;
+    animation: fade 3s 1, dashes 100s infinite linear;
+    opacity: 0.3;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+    box-sizing: border-box;
+    display: inline;
+    font-size: 10px;
+    width: 100%;
+    line-height: 1;
+    color: rgba(0, 0, 0, 0.8);
+    content: "\25BC";
+    position: absolute;
+    text-align: center;
+}
+
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+    margin: -1px 0 0 0;
+    top: 100%;
+    left: 0;
+}
+
+.player-column h2{
+    color: #EFFAB4;
+}
+
+.wins {
+    height: 100%;
+    width: 170px;
+    float: left;
+}
+
+.losses {
+    width: 170px;
+    float: left;
+}
+
+.isloading-wrapper {
+    opacity: 1;
+    width: 50px;
+    height: 50px;
+}
+
+
+.isloading-icon {
+}
+
+.isloading-overlay{position: absolute; text-align: center;}
+.isloading-overlay .isloading-wrapper{
+    -webkit-border-radius:7px;
+    -webkit-background-clip:padding-box;
+    -moz-border-radius:7px;
+    -moz-background-clip:padding;
+    border-radius:7px;
+    background-clip:padding-box;
+    display: inline-block;
+    margin:0 auto;
+    top:10%;
+    z-index:9000;
+    background-image: url('smash.png');
+    -moz-animation: spin .4s 1 linear;
+    -o-animation: spin .4s 1 linear;
+    -webkit-animation: spin 3s infinite linear;
+    animation: spin 3s infinite linear;
+}
+
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(359deg); }
+}
+
+@-moz-keyframes spin {
+    0% { -moz-transform: rotate(0deg); }
+    100% { -moz-transform: rotate(359deg); }
+}
+
+@-o-keyframes spin {
+    0% { -o-transform: rotate(0deg); }
+    100% { -o-transform: rotate(359deg); }
+}
+
+@-ms-keyframes spin {
+    0% { -ms-transform: rotate(0deg); }
+    100% { -ms-transform: rotate(359deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(359deg); }
+}
