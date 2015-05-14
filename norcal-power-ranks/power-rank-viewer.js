@@ -39,7 +39,7 @@ var completeWinLossRecords = function(players) {
                 nodeOfPersonTheyBeat.losses.push(player.displayName);
             }
         });
-        player.wins.forEach(function(nameOfPersonTheyLostTo) {
+        player.losses.forEach(function(nameOfPersonTheyLostTo) {
             var nodeOfPersonTheyLostTo = findPlayerNode(nameOfPersonTheyLostTo, players);
             if (nodeOfPersonTheyLostTo !== null &&
                 nodeOfPersonTheyLostTo.wins.indexOf(player.displayName) === -1) {
