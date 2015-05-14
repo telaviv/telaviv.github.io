@@ -35,7 +35,7 @@ var createWinnerLinks = function(players) {
         player.wins.forEach(function(losingPlayer, li) {
             var index = findIndex(players, playerSearcher(losingPlayer));
             if (index !== -1) {
-                links.push({source: wi, target: li});
+                links.push({source: wi, target: index});
             }
         });
     });
