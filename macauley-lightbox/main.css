@@ -1,0 +1,91 @@
+body {
+    background-color: #F2DFCA;
+    font-family: 'Didact Gothic', sans-serif;
+}
+
+a {
+    color: #73A8AF;
+}
+
+h1 {
+    text-align: center;
+    font-size: 60px;
+    margin: 100px;
+}
+
+.galleries {
+    display: flex;
+    justify-content: space-around;
+    margin: 200px auto;
+    width: 900px;
+}
+
+.gallery {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 150px;
+    font-size: 20px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+ }
+
+.overlay.hide {
+   height: 0%;
+   opacity: 0;
+   transition: opacity 1s, height 0s;
+   transition-delay: 0s, 1s;
+}
+
+.overlay.show {
+    visibility: visible;
+    opacity: 1;
+    height: 100%;
+    transition: height 0s, opacity 1s;
+}
+
+.wrapper {
+    transition: 1s filter ease;
+    filter: none;
+}
+
+.wrapper.blur {
+    filter: blur(5px);
+}
+
+.overlay .center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    transition: 0.5s background-color ease;
+}
+
+.lightbox {
+    display: inline-block;
+    background-color: white;
+    border: solid white;
+    border-radius: 3px;
+}
+
+.lightbox video {
+    width: 750px
+}
+
+.navigation {
+    font-size: 20px;
+}
+
+.message {
+    padding: 30px;
+    font-size: 20px;
+    text-align: center;
+}
